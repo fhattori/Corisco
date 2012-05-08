@@ -1168,11 +1168,13 @@
 
 <!-- dri:options structure -->
 
+    <!-- @hattori above @kepler changes
     <xsl:template match="dri:list[@id='aspect.artifactbrowser.Navigation.list.browse']" priority="10">
         NAVIGATION-BROWSE
     </xsl:template>
+    -->
 
-    <xsl:template match="dri:list[@id='aspect.administrative.Navigation.list.account']" priority="100">
+    <xsl:template match="dri:list[@id='aspect.viewArtifacts.Navigation.list.account']" priority="100">
         <!-- hide -->
     </xsl:template>
 

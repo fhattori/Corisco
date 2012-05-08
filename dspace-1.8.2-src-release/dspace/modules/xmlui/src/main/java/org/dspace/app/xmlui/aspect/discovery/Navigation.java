@@ -134,14 +134,14 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
     */
 
         /* @hattori
-	  remember to keep Discovery as the first aspect, so this order actually works!
-	  regulate the ordering
+	  remember to keep Discovery as the first aspect on xmlui.xconf configuration file, so this order actually works!
+	  the next five lines regulates the ordering.
 	*/
         options.addList("discovery");
         options.addList("browse");
-        options.addList("account");
-        options.addList("context");
-        options.addList("administrative");
+	//options.addList("account");
+        //options.addList("context");
+        //options.addList("administrative");
 
 	/* @hattori
 	  add a search bar with filters
@@ -150,11 +150,7 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
 	List topSearchList = options.addList("top-search");
 
 	java.util.List<DiscoverySearchFilter> searchfilters = SearchUtils.getDiscoveryConfiguration(dso).getSearchFilters();
-        ArrayList<String> fields = new ArrayList<String>();
-	for (int i=0; i<searchfilters.size(); i++){
-	    fields.addAll(searchfilters.get(i).getMetadataFields());
-	}
-        if (fields.size() > 0) {
+        if (searchfilters.size() > 0) {
             //We have at least one filter so add our filter box
             Item item = topSearchList.addItem("search-filter-list", "search-filter-list");
             Composite filterComp = item.addComposite("search-filter-controls");
@@ -168,8 +164,8 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
 
             //For each field found (at least one) add options
 
-            for (int i=0; i<fields.size(); i++) {
-                select.addOption(fields.get(i), message("xmlui.ArtifactBrowser.SimpleSearch.filter." + fields.get(i)));
+            for (int i=0; i<searchfilters.size(); i++) {
+                select.addOption(searchfilters.get(i).getIndexFieldName(), message("xmlui.ArtifactBrowser.SimpleSearch.filter.dc." + searchfilters.get(i).getIndexFieldName()));
             }
 
             filterComp.addText("filter");
@@ -190,9 +186,9 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
 
         // Add metadata for quick searches:
         pageMeta.addMetadata("search", "simpleURL").addContent(
-                "/discover");
+                "/xmlui/discover");
         pageMeta.addMetadata("search", "advancedURL").addContent(
-                contextPath + "/discover");
+                contextPath + "/xmlui/discover");
         pageMeta.addMetadata("search", "queryField").addContent("query");
         
     }
