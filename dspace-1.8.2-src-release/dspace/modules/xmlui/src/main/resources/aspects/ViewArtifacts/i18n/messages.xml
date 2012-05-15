@@ -133,6 +133,13 @@
 
     <!-- org.dspace.app.xmlui.artifactbrowser.AbstractSearch.java -->
     <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.ispartof">Parent</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.title_sort">Title</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dc.date.issued_dt">Date issued</message>
+
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.rpp">Results/page</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by">Order by</message>
+    <message key="xmlui.ArtifactBrowser.AbstractSearch.order">in order</message>
+
     <message key="xmlui.ArtifactBrowser.AbstractSearch.group_by">Group Results By</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.group_by.none">None</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.group_by.publication_grp">Publication</message>
@@ -181,6 +188,7 @@
 
     <!-- ArtifactBrowser Navigation -->
     <message key="xmlui.ArtifactBrowser.Navigation.browse_dc.title">Title</message>
+    <message key="xmlui.ArtifactBrowser.Navigation.head_browse">Browse by</message>
     <message key="xmlui.ArtifactBrowser.Navigation.browse_dc.contributor.author">Author</message>
     <message key="xmlui.ArtifactBrowser.Navigation.browse_dc.subject">Subject</message>
     <message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued.year">Year issued</message>
@@ -191,13 +199,15 @@
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.title">Title</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.title_t">Title</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.contributor.author">Author</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.author">Author</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.contributor.author_t">Author</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.subject">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.subject_t">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.subject.lcsh">Subject</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.description">Description</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.description_t">Description</message>
-<!--    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateissued.year">Year Issued</message>-->
+    <!--    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateissued.year">Year Issued</message>-->
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dc.dateIssued">Date Issued</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.dateissued.year">Year</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.author_t">Author</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.content">Content</message>

@@ -71,6 +71,8 @@
     <xsl:import href="./xsl/structural.xsl"/>
     <xsl:import href="./xsl/viewer.xsl"/>
     <xsl:import href="./xsl/static.xsl"/>
+
+    <xsl:import href="./xsl/new-structural.xsl"/>
 <!--    <xsl:import href="./xsl/QDC-Handler.xsl"/>
     <xsl:import href="./xsl/MODS-Handler.xsl"/>-->
 

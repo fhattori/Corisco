@@ -137,11 +137,12 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
 	  remember to keep Discovery as the first aspect on xmlui.xconf configuration file, so this order actually works!
 	  the next five lines regulates the ordering.
 	*/
+	options.addList("secondary-search");
         options.addList("discovery");
         options.addList("browse");
-	//options.addList("account");
-        //options.addList("context");
-        //options.addList("administrative");
+	options.addList("account");
+        options.addList("context");
+        options.addList("administrative");
 
 	/* @hattori
 	  add a search bar with filters
@@ -186,9 +187,9 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
 
         // Add metadata for quick searches:
         pageMeta.addMetadata("search", "simpleURL").addContent(
-                "/xmlui/discover");
+                contextPath + "/discover");
         pageMeta.addMetadata("search", "advancedURL").addContent(
-                contextPath + "/xmlui/discover");
+                contextPath + "/discover");
         pageMeta.addMetadata("search", "queryField").addContent("query");
         
     }

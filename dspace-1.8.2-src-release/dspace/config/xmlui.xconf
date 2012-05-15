@@ -65,18 +65,14 @@
             <aspect name="Artifact Browser" path="resource://aspects/ArtifactBrowser/" />
         -->
 	   <aspect name="Discovery" path="resource://aspects/Discovery/" />	
-        <aspect name="Displaying Artifacts" path="resource://aspects/ViewArtifacts/" />
-        <aspect name="Browsing Artifacts" path="resource://aspects/BrowseArtifacts/" />
+           <aspect name="Displaying Artifacts" path="resource://aspects/ViewArtifacts/" />
+           <aspect name="Browsing Artifacts" path="resource://aspects/BrowseArtifacts/" />
         <!--
 	   <aspect name="Searching Artifacts" path="resource://aspects/SearchArtifacts/" />
         -->
-	<!--
 	   <aspect name="Administration" path="resource://aspects/Administrative/" />
-        -->   
 	   <aspect name="E-Person" path="resource://aspects/EPerson/" />
-           <!--
 	   <aspect name="Submission and Workflow" path="resource://aspects/Submission/" />
-	   -->
 	   <aspect name="Statistics" path="resource://aspects/Statistics/" />
 	    <aspect name="Original Workflow" path="resource://aspects/Workflow/" />
 	    <!--<aspect name="XMLWorkflow" path="resource://aspects/XMLWorkflow/" />-->

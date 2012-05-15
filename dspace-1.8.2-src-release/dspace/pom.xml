@@ -32,9 +32,9 @@
     </scm>
 
     <properties>
-        <default.dspace.dir>/dspace</default.dspace.dir>
+        <default.dspace.dir>/dados/dspace-1.8</default.dspace.dir>
         <default.mail.server>smtp.example.com</default.mail.server>
-        <default.solr.server>http://localhost:8080/solr</default.solr.server>
+        <default.solr.server>http://localhost:8180/solr</default.solr.server>
     </properties>
 
     <profiles>
@@ -89,7 +89,7 @@
                 <default.db.name>postgres</default.db.name>
                 <default.db.driver>org.postgresql.Driver</default.db.driver>
                 <default.db.url>
-                    jdbc:postgresql://localhost:5432/dspace
+                    jdbc:postgresql://localhost:5432/dspace18
                 </default.db.url>
                 <default.db.username>dspace</default.db.username>
                 <default.db.password>dspace</default.db.password>

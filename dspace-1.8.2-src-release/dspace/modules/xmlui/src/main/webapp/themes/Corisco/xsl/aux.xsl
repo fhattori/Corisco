@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  structural.xsl
+  new-structural.xsl
 
-  Version: 1
- 
-  Date: 2011-02-15 09:30:00 -0200 (Tue, 15 Feb 2011)
- 
   Copyright (c) 2010-2011, Brasiliana Digital Library (http://brasiliana.usp.br).
   Copyright (c) 2002-2005, Hewlett-Packard Company and Massachusetts
   Institute of Technology.  All rights reserved.
@@ -42,8 +38,7 @@
 -->
 
 <!--
-    Based on the Reference theme (copied and modified).
-    Author: Fabio N. Kepler
+    Author: Fernando Hattori
 -->
 
 <xsl:stylesheet xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
@@ -1168,17 +1163,19 @@
 
 <!-- dri:options structure -->
 
-    <xsl:template match="dri:list[@id='aspect.artifactbrowser.Navigation.list.browse']" priority="10">
+    <!-- @hattori above @kepler changes
+    <xsl:template match="dri:list[@id='aspect.discovery.Navigation.list.browse']" priority="10">
         NAVIGATION-BROWSE
     </xsl:template>
+    -->
 
-    <xsl:template match="dri:list[@id='aspect.administrative.Navigation.list.account']" priority="100">
+    <xsl:template match="dri:list[@id='aspect.viewArtifacts.Navigation.list.account']" priority="100">
         <!-- hide -->
     </xsl:template>
 
 
     <xsl:template name="options-search-box">
-        <xsl:apply-templates select="//dri:div[@interactive='yes'][@n='general-query']/dri:list[@n='search-query']/dri:item[@n='search-filter-list']" mode="Corisco" />
+        <xsl:apply-templates select="//dri:div[@n='search-filters']" />
     </xsl:template>
 
 
@@ -2274,7 +2271,7 @@
         <xsl:choose>
             <xsl:when test="dri:field/dri:label">
 <!--                <label class="ds-form-label">-->
-                <div class="borda" id="titulo-busca">
+                <div class="borda" id="titulo-buscas">
                     <xsl:choose>
                         <xsl:when test="./dri:field/@id">
                             <xsl:attribute name="for">
@@ -2469,8 +2466,7 @@
     <xsl:template match="dri:options/dri:list[dri:list][@n='discovery']" priority="4">
 <!--        <xsl:apply-templates select="dri:head"/>-->
 
-        <xsl:apply-templates select="//dri:div[@interactive='yes'][@n='general-query']/dri:list[@n='search-query']/dri:item[@n='search-filter-list']" />
-<!--                             mode="Corisco"-->
+        <xsl:apply-templates select="//dri:div[@n='search-filters']" />
 
         <!-- Once the search box is built, the other parts of the options are added -->
 
@@ -2603,7 +2599,7 @@
             <xsl:when test="contains(dri:xref/@target, 'community-list')">
                 <!-- SKIP -->
             </xsl:when>
-            <xsl:when test="contains(dri:xref/@target, 'dc.title')">
+            <xsl:when test="contains(dri:xref/@target, 'title')">
                 <li class="lista-item">
                     <span>
                         <a>
@@ -2614,7 +2610,7 @@
                                     <xsl:value-of select="substring-after(//dri:meta/dri:pageMeta/dri:metadata[@element='focus'][@qualifier='container'], ':')"/>
                                 </xsl:if>
 <!--                                <xsl:value-of select="//dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='URI']"/>-->
-                                <xsl:text>/search?order=ASC&amp;sort_by=dc.title</xsl:text>
+                                <xsl:text>/discover?sort_by=dc.title_sort&amp;order=ASC</xsl:text>
                             </xsl:attribute>
                             <xsl:attribute name="class">
                                 <xsl:value-of select="@rend"/>
